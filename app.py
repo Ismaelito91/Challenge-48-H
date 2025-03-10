@@ -240,6 +240,13 @@ if not tweets_df.empty:
         sentiment_counts = tweets_filtered['sentiment_category'].value_counts().reset_index()
         sentiment_counts.columns = ['Sentiment', 'Nombre']
         
+        # Définir une palette de couleurs cohérente pour tous les graphiques
+        sentiment_colors = {
+            'Négatif': 'rgba(231, 76, 60, 0.7)',
+            'Neutre': 'rgba(241, 196, 15, 0.7)',
+            'Positif': 'rgba(46, 204, 113, 0.7)'
+        }
+        
         col1, col2 = st.columns(2)
         
         with col1:
@@ -247,7 +254,15 @@ if not tweets_df.empty:
                 sentiment_counts, 
                 values='Nombre', 
                 names='Sentiment',
-                title="Répartition des sentiments"
+                title="Répartition des sentiments",
+                color='Sentiment',
+                color_discrete_map=sentiment_colors
+            )
+            # Amélioration de l'apparence du graphique
+            fig.update_traces(
+                textposition='inside',
+                textinfo='percent+label',
+                marker=dict(line=dict(color='white', width=2))
             )
             st.plotly_chart(fig, use_container_width=True)
         
@@ -256,7 +271,21 @@ if not tweets_df.empty:
                 sentiment_counts,
                 x='Sentiment',
                 y='Nombre',
-                title="Nombre de tweets par sentiment"
+                title="Nombre de tweets par sentiment",
+                color='Sentiment',
+                color_discrete_map=sentiment_colors
+            )
+            # Amélioration de l'apparence du graphique
+            fig.update_traces(
+                marker_line_width=1,
+                marker_line_color="white",
+                opacity=0.8
+            )
+            fig.update_layout(
+                xaxis_title="Sentiment",
+                yaxis_title="Nombre de tweets",
+                plot_bgcolor="rgba(240, 240, 240, 0.5)",
+                margin=dict(l=20, r=20, t=40, b=20),
             )
             st.plotly_chart(fig, use_container_width=True)
     
