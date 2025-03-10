@@ -2,4 +2,7 @@ streamlit
 pandas
 numpy
 matplotlib
-plotly 
+plotly
+nltk
+textblob
+wordcloud 
