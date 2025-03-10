@@ -6,6 +6,7 @@ import plotly.express as px
 from datetime import datetime, timedelta
 import re
 from textblob import TextBlob
+import locale
 
 # Configuration de la page
 st.set_page_config(
@@ -134,16 +135,40 @@ if not tweets_df.empty:
     with tab1:
         st.subheader("Évolution des tweets dans le temps")
         
-        # Créer une colonne pour le mois
-        tweets_filtered['year'] = tweets_filtered['date'].dt.year
-        tweets_filtered['month'] = tweets_filtered['date'].dt.month
-        tweets_filtered['year_month'] = tweets_filtered['date'].dt.strftime('%Y-%m')
+        # Format plus lisible pour l'affichage des mois en français
+        try:
+            locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')  # Pour Linux/Mac
+        except:
+            try:
+                locale.setlocale(locale.LC_TIME, 'fra_fra')  # Pour Windows
+            except:
+                pass  # Si aucune locale française n'est disponible
+
+        # Créer les colonnes pour la date et le tri
+        tweets_filtered['year_month'] = tweets_filtered['date'].dt.strftime('%B %Y')
+        tweets_filtered['sort_date'] = tweets_filtered['date'].dt.strftime('%Y-%m')
         
-        # Regrouper par mois au lieu de par trimestre
+        # Regrouper par mois
         tweets_by_month = tweets_filtered.groupby('year_month').size().reset_index(name='count')
         
-        # Créer aussi des groupes par sentiment pour un graphique plus riche
+        # Ajouter la colonne de tri - CORRECTION ICI
+        month_mapping = tweets_filtered[['year_month', 'sort_date']].drop_duplicates()
+        tweets_by_month = tweets_by_month.merge(month_mapping, on='year_month', how='left')
+        
+        # Trier les données par la date de tri
+        tweets_by_month = tweets_by_month.sort_values('sort_date')
+        
+        # Liste des mois dans le bon ordre
+        month_order = tweets_by_month['year_month'].tolist()
+        
+        # Grouper par sentiment et mois
         sentiment_by_month = tweets_filtered.groupby(['year_month', 'sentiment_category']).size().reset_index(name='count')
+        
+        # Ajouter la colonne de tri - CORRECTION ICI AUSSI
+        sentiment_by_month = sentiment_by_month.merge(month_mapping, on='year_month', how='left')
+        
+        # Trier les données par sentiment
+        sentiment_by_month = sentiment_by_month.sort_values('sort_date')
         
         # Option pour choisir le type de visualisation
         chart_type = st.radio("Type de visualisation", ["Simple", "Détaillée"], horizontal=True)
@@ -155,7 +180,8 @@ if not tweets_df.empty:
                 x='year_month', 
                 y='count',
                 title="Évolution mensuelle des tweets",
-                color_discrete_sequence=["rgba(55, 83, 109, 0.7)"],  # Bleu foncé avec transparence
+                color_discrete_sequence=["rgba(55, 83, 109, 0.7)"],
+                category_orders={"year_month": month_order}  # Ordre correct
             )
             
             # Personnalisation du graphique
@@ -175,25 +201,27 @@ if not tweets_df.empty:
             )
             
         else:  # Visualisation détaillée
-            # Graphique à barres groupées par sentiment
+            # Graphique à barres empilées par sentiment (au lieu de groupées)
             fig = px.bar(
                 sentiment_by_month, 
                 x='year_month', 
                 y='count',
                 color='sentiment_category',
                 title="Évolution mensuelle des tweets par sentiment",
-                barmode='group',  # Barres groupées
+                barmode='stack',  # 'stack' au lieu de 'group' pour empiler
                 color_discrete_map={
                     'Négatif': 'rgba(231, 76, 60, 0.7)',
                     'Neutre': 'rgba(241, 196, 15, 0.7)',
                     'Positif': 'rgba(46, 204, 113, 0.7)'
                 },
+                category_orders={"year_month": month_order}
             )
             
             # Personnalisation du graphique
             fig.update_traces(
                 marker_line_width=1,
-                opacity=0.8
+                marker_line_color="white",  # Ajouter une bordure blanche pour mieux distinguer les segments
+                opacity=0.9  # Augmenter légèrement l'opacité pour rendre les segments plus visibles
             )
             
             fig.update_layout(
@@ -304,7 +332,9 @@ if not tweets_df.empty:
         
         # Afficher un tableau interactif avec les IDs ajoutés
         st.dataframe(
-            display_tweets[['id', 'date', 'screen_name', 'full_text', 'sentiment_category']],
+            display_tweets[['id', 'date', 'screen_name', 'full_text', 'sentiment_category']].assign(
+                date=display_tweets['date'].dt.strftime('%d/%m/%Y %H:%M')
+            ),
             use_container_width=True
         )
         
