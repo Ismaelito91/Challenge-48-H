@@ -181,14 +181,15 @@ if not tweets_df.empty:
                 y='count',
                 title="Évolution mensuelle des tweets",
                 color_discrete_sequence=["rgba(55, 83, 109, 0.7)"],
-                category_orders={"year_month": month_order}  # Ordre correct
+                category_orders={"year_month": month_order}
             )
             
             # Personnalisation du graphique
             fig.update_traces(
                 marker_line_width=1,
                 marker_line_color="rgb(25, 43, 79)",
-                opacity=0.8
+                opacity=0.8,
+                hovertemplate='<b>%{x}</b><br>Nombre de tweets: %{y}<extra></extra>'
             )
             
             fig.update_layout(
@@ -221,7 +222,8 @@ if not tweets_df.empty:
             fig.update_traces(
                 marker_line_width=1,
                 marker_line_color="white",  # Ajouter une bordure blanche pour mieux distinguer les segments
-                opacity=0.9  # Augmenter légèrement l'opacité pour rendre les segments plus visibles
+                opacity=0.9,
+                hovertemplate='<b>%{x}</b><br>Sentiment: %{fullData.name}<br>Nombre de tweets: %{y}<extra></extra>'
             )
             
             fig.update_layout(
@@ -290,7 +292,8 @@ if not tweets_df.empty:
             fig.update_traces(
                 textposition='inside',
                 textinfo='percent+label',
-                marker=dict(line=dict(color='white', width=2))
+                marker=dict(line=dict(color='white', width=2)),
+                hovertemplate='<b>%{label}</b><br>Nombre: %{value}<br>Pourcentage: %{percent}<extra></extra>'
             )
             st.plotly_chart(fig, use_container_width=True)
         
@@ -307,7 +310,8 @@ if not tweets_df.empty:
             fig.update_traces(
                 marker_line_width=1,
                 marker_line_color="white",
-                opacity=0.8
+                opacity=0.8,
+                hovertemplate='<b>%{x}</b><br>Nombre de tweets: %{y}<extra></extra>'
             )
             fig.update_layout(
                 xaxis_title="Sentiment",
