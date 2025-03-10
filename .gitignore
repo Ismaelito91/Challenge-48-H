@@ -1,8 +1,11 @@
+# Dans le répertoire principal de votre projet
+cat > .gitignore << EOF
 venv/
 __pycache__/
 *.py[cod]
-*.class
+*$py.class
 .streamlit/secrets.toml
 *.pyc
 .env
 .DS_Store
+EOF
