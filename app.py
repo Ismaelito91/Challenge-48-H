@@ -133,16 +133,107 @@ if not tweets_df.empty:
     
     with tab1:
         st.subheader("Évolution des tweets dans le temps")
-        # Regrouper par jour
-        tweets_by_date = tweets_filtered.groupby(tweets_filtered['date'].dt.date).size().reset_index(name='count')
         
-        fig = px.line(
-            tweets_by_date, 
-            x='date', 
-            y='count',
-            title="Nombre de tweets par jour"
+        # Créer une colonne pour le mois
+        tweets_filtered['year'] = tweets_filtered['date'].dt.year
+        tweets_filtered['month'] = tweets_filtered['date'].dt.month
+        tweets_filtered['year_month'] = tweets_filtered['date'].dt.strftime('%Y-%m')
+        
+        # Regrouper par mois au lieu de par trimestre
+        tweets_by_month = tweets_filtered.groupby('year_month').size().reset_index(name='count')
+        
+        # Créer aussi des groupes par sentiment pour un graphique plus riche
+        sentiment_by_month = tweets_filtered.groupby(['year_month', 'sentiment_category']).size().reset_index(name='count')
+        
+        # Option pour choisir le type de visualisation
+        chart_type = st.radio("Type de visualisation", ["Simple", "Détaillée"], horizontal=True)
+        
+        if chart_type == "Simple":
+            # Graphique à barres pour les mois
+            fig = px.bar(
+                tweets_by_month, 
+                x='year_month', 
+                y='count',
+                title="Évolution mensuelle des tweets",
+                color_discrete_sequence=["rgba(55, 83, 109, 0.7)"],  # Bleu foncé avec transparence
+            )
+            
+            # Personnalisation du graphique
+            fig.update_traces(
+                marker_line_width=1,
+                marker_line_color="rgb(25, 43, 79)",
+                opacity=0.8
+            )
+            
+            fig.update_layout(
+                xaxis_title="Mois",
+                yaxis_title="Nombre de tweets",
+                hovermode="x unified",  # Affiche toutes les valeurs pour un mois sur survol
+                plot_bgcolor="rgba(240, 240, 240, 0.5)",  # Fond légèrement gris
+                margin=dict(l=20, r=20, t=40, b=20),
+                height=450,
+            )
+            
+        else:  # Visualisation détaillée
+            # Graphique à barres groupées par sentiment
+            fig = px.bar(
+                sentiment_by_month, 
+                x='year_month', 
+                y='count',
+                color='sentiment_category',
+                title="Évolution mensuelle des tweets par sentiment",
+                barmode='group',  # Barres groupées
+                color_discrete_map={
+                    'Négatif': 'rgba(231, 76, 60, 0.7)',
+                    'Neutre': 'rgba(241, 196, 15, 0.7)',
+                    'Positif': 'rgba(46, 204, 113, 0.7)'
+                },
+            )
+            
+            # Personnalisation du graphique
+            fig.update_traces(
+                marker_line_width=1,
+                opacity=0.8
+            )
+            
+            fig.update_layout(
+                xaxis_title="Mois",
+                yaxis_title="Nombre de tweets",
+                legend_title="Sentiment",
+                hovermode="x unified",
+                plot_bgcolor="rgba(240, 240, 240, 0.5)",
+                margin=dict(l=20, r=20, t=40, b=20),
+                height=450,
+            )
+        
+        # Ajouter des annotations pour le mois le plus important
+        highest_month = tweets_by_month.iloc[tweets_by_month['count'].argmax()]
+        fig.add_annotation(
+            x=highest_month['year_month'],
+            y=highest_month['count'],
+            text=f"Pic: {highest_month['count']} tweets",
+            showarrow=True,
+            arrowhead=2,
+            arrowcolor="black",
+            arrowsize=1,
+            arrowwidth=1,
+            yshift=10
         )
+        
+        # Afficher le graphique
         st.plotly_chart(fig, use_container_width=True)
+        
+        # Ajouter des statistiques en dessous du graphique
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            avg_tweets = tweets_by_month['count'].mean()
+            st.metric("Moyenne par mois", f"{avg_tweets:.1f} tweets")
+        with col2:
+            max_tweets = tweets_by_month['count'].max()
+            st.metric("Maximum mensuel", f"{max_tweets} tweets")
+        with col3:
+            total_months = len(tweets_by_month)
+            st.metric("Nombre de mois", f"{total_months}")
     
     with tab2:
         st.subheader("Répartition des sentiments")
