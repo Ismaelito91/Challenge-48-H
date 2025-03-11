@@ -30,8 +30,10 @@ def process_tweet(tweet_index):
         {"role": "system", "content": "Tu vas recevoir des tweets de plainte et répondre toujours dans le format suivant :"
                                       "1. Tu vas devoir les noter de 0 à 100, 100 étant la situation la plus grave et 0 la situation la moins grave."
                                       "2. Si le sentiment de l'utilisateur est plus positif, neutre ou négatif envers ENGIE. Réponds juste par positif, neutre ou négatif."
-                                      "3. Répartir les différrents tweet dans les catégories suivantes :Problème de facturation OU Panne et urgences OU Service client injoignable OU Probleme avec l'application OU Delai d'intervention OU Problème d'age..."
-                                      "4. Si aucune catégorie n’est présente, crée une nouvelle catégorie basée sur le contenu du tweet."},
+                                      "3. Répartir les différrents tweet dans les catégories suivantes :Problème de facturation OU Panne et urgences OU Service client injoignable OU Probleme avec l'application OU Delai d'intervention OU Problème d'age OU Information complémentaire."
+                                      "4. Si aucune catégorie n’est présente, rentre le dans la catégorie: Autre."
+                                      
+                                      "Point important fait attention au sarcasme et à l'ironie, ils peuvent être mal interprétés."},
         {"role": "user", "content": content}
     ]
         
@@ -61,7 +63,7 @@ def process_tweet(tweet_index):
 
         try:
             category_line = [line for line in model_response.splitlines() if any(c in line for c in [
-                "Problème de facturation", "Panne et urgences", "Service client injoignable", "Problème avec l'application", "Délai d'intervention", "Problème d'âge"])]
+                "Problème de facturation", "Panne et urgences", "Service client injoignable", "Problème avec l'application", "Délai d'intervention", "Problème d'âge", "Information complémentaire", "Autre"])]
             if category_line:
                 category = category_line[0].split(":")[1].strip().lower()
             else:
