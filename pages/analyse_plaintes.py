@@ -132,28 +132,9 @@ else:
     
     # Si le sentiment n'est pas encore calculé
     if 'sentiment_category' not in data.columns:
-        # Ajouter une analyse simplifiée des sentiments
-        def simple_sentiment(text):
-            text = str(text).lower()
-            negative_words = ['problème', 'erreur', 'bug', 'panne', 'mauvais', 'horrible', 'nul', 'impossible']
-            positive_words = ['merci', 'super', 'excellent', 'parfait', 'bon', 'bien']
-            
-            score = 0
-            for word in negative_words:
-                if word in text:
-                    score -= 0.2
-            for word in positive_words:
-                if word in text:
-                    score += 0.2
-            
-            return max(min(score, 1.0), -1.0)  # Limiter entre -1 et 1
-        
-        data['sentiment'] = data[text_column].apply(simple_sentiment)
-        data['sentiment_category'] = pd.cut(
-            data['sentiment'],
-            bins=[-1, -0.2, 0.2, 1],
-            labels=['Négatif', 'Neutre', 'Positif']
-        )
+        # Utiliser des valeurs par défaut plutôt qu'une analyse
+        data['sentiment'] = -0.5  # Valeur par défaut négative
+        data['sentiment_category'] = 'Négatif'  # Par défaut, considérer comme négatif
     
     # Filtrer les tweets négatifs et neutres
     filtered_data = data[data['sentiment_category'].isin(['Négatif', 'Neutre'])]

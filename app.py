@@ -27,9 +27,8 @@ try:
 except ImportError:
     AGENT_IA_AVAILABLE = False
 
-# Ajouter l'option d'utiliser l'agent IA avancé dans la barre latérale
-st.sidebar.title("Options avancées")
-use_advanced_ai = st.sidebar.checkbox("Utiliser l'analyse IA avancée", value=AGENT_IA_AVAILABLE)
+# Définir la variable avec une valeur par défaut (désactivée)
+use_advanced_ai = False
 
 # Titre de l'application
 st.title("Dashboard Service client de Engie")
@@ -69,14 +68,7 @@ def load_tweets_data():
 
 # Fonction simplifiée pour l'analyse des sentiments
 def analyze_sentiment(text):
-    # Si l'analyse avancée est activée et disponible
-    if use_advanced_ai and AGENT_IA_AVAILABLE:
-        try:
-            return analyze_tweet_advanced(text)
-        except Exception as e:
-            st.warning(f"Erreur avec l'analyse avancée: {e}. Utilisation de l'analyse simplifiée.")
-    
-    # Version simplifiée qui classifie simplement en fonction de mots clés
+    # Version simplifiée sans vérifier use_advanced_ai
     text = str(text).lower()
     
     # Nettoyer le texte si la fonction est disponible
