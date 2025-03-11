@@ -3,6 +3,10 @@ import pandas as pd
 import plotly.express as px
 import os
 import sys
+import numpy as np
+import locale
+import matplotlib.pyplot as plt
+import matplotlib
 
 # Configuration de la page - DOIT ÊTRE PREMIER APPEL À STREAMLIT
 st.set_page_config(
@@ -169,19 +173,6 @@ else:
     with col1:
         st.subheader("Distribution des problèmes")
         st.dataframe(problem_counts, use_container_width=True)
-        
-        st.markdown("### Légende des catégories")
-        categories_explanation = {
-            'Facturation': 'Problèmes liés aux factures, prélèvements, tarifs',
-            'Application/Site': 'Problèmes avec l\'application mobile ou le site web',
-            'Chauffage/Eau': 'Problèmes liés au chauffage ou à l\'eau chaude',
-            'Service Client': 'Difficultés à joindre ou obtenir une réponse',
-            'Installation': 'Problèmes avec les installations ou interventions',
-            'Autre': 'Problèmes divers non classifiés'
-        }
-        
-        for cat, desc in categories_explanation.items():
-            st.write(f"- **{cat}**: {desc}")
     
     with col2:
         st.subheader("Graphique des problèmes")
@@ -204,28 +195,147 @@ else:
         
         st.plotly_chart(fig, use_container_width=True)
     
-    # Afficher quelques exemples de tweets par catégorie
-    st.header("Exemples par catégorie de problème")
-    
-    selected_category = st.selectbox(
-        "Sélectionner une catégorie de problème",
-        options=problem_counts['Catégorie'].tolist()
-    )
-    
-    if selected_category:
-        examples = filtered_data[filtered_data['problem_category'] == selected_category]
-        if not examples.empty:
-            st.subheader(f"Exemples de la catégorie: {selected_category}")
+    # Répartition proportionnelle des problèmes par mois
+    st.header("Évolution mensuelle des types de problèmes")
+
+    # Vérifier si les données contiennent une colonne date
+    if 'date' in filtered_data.columns:
+        # Essayer de convertir la colonne date en datetime si ce n'est pas déjà fait
+        try:
+            # Vérifier si la conversion est nécessaire
+            if not pd.api.types.is_datetime64_any_dtype(filtered_data['date']):
+                filtered_data['date'] = pd.to_datetime(filtered_data['date'], errors='coerce')
             
-            # Limiter à 5 exemples maximum
-            examples_to_show = min(5, len(examples))
-            for i in range(examples_to_show):
-                with st.expander(f"Exemple {i+1}"):
-                    st.write(examples.iloc[i][text_column])
+            # Vérifier s'il reste des dates valides après conversion
+            if filtered_data['date'].notna().sum() > 0:
+                # Créer une fonction de mappage des mois en français
+                def get_french_month_name(month_num):
+                    month_names = {
+                        '01': 'Janvier', '02': 'Février', '03': 'Mars', '04': 'Avril',
+                        '05': 'Mai', '06': 'Juin', '07': 'Juillet', '08': 'Août',
+                        '09': 'Septembre', '10': 'Octobre', '11': 'Novembre', '12': 'Décembre'
+                    }
+                    return month_names.get(month_num, month_num)
+
+                # Créer un ordre numérique pour trier correctement les mois
+                filtered_data['month_sort'] = filtered_data['date'].dt.strftime('%Y%m')
+                
+                # Extraire le mois et l'année séparément
+                filtered_data['month_num'] = filtered_data['date'].dt.strftime('%m')
+                filtered_data['year'] = filtered_data['date'].dt.strftime('%Y')
+                
+                # Créer une colonne avec un format plus lisible pour l'affichage
+                filtered_data['month_name'] = filtered_data['month_num'].apply(get_french_month_name) + ' ' + filtered_data['year']
+                
+                # Grouper par mois et catégorie de problème
+                problems_by_month = filtered_data.groupby(['month_sort', 'month_name', 'problem_category']).size().reset_index(name='count')
+                
+                # Trier par année et mois (ordre chronologique)
+                problems_by_month = problems_by_month.sort_values('month_sort')
+                
+                # Récupérer l'ordre des mois pour l'affichage
+                month_order = problems_by_month['month_name'].unique()
+                
+                # Vérifier qu'il y a des données à afficher
+                if not problems_by_month.empty:
+                    # Normaliser explicitement les données à 100%
+                    # Calculer le total par mois
+                    total_by_month = problems_by_month.groupby('month_name')['count'].sum().reset_index()
+                    
+                    # Fusionner avec les données d'origine
+                    problems_by_month = problems_by_month.merge(total_by_month, on='month_name', suffixes=('', '_total'))
+                    
+                    # Calculer le pourcentage
+                    problems_by_month['percentage'] = problems_by_month['count'] / problems_by_month['count_total'] * 100
+                    
+                    # Créer le graphique avec les pourcentages calculés
+                    fig = px.bar(
+                        problems_by_month, 
+                        x='month_name', 
+                        y='percentage',  # Utiliser directement les pourcentages calculés
+                        color='problem_category',
+                        title="Répartition des types de problèmes par mois (base 100)",
+                        category_orders={"month_name": month_order},
+                        color_discrete_sequence=px.colors.qualitative.Bold,
+                        labels={"month_name": "Mois", "percentage": "Pourcentage (%)", "problem_category": "Type de problème"}
+                    )
+                    
+                    # Configurer le graphique pour l'empilement standard
+                    fig.update_layout(
+                        barmode='stack',  # Empiler les barres
+                        xaxis_title="Mois",
+                        yaxis_title="Pourcentage (%)",
+                        legend_title="Type de problème",
+                        hovermode="x unified",
+                        yaxis=dict(range=[0, 100]),  # Forcer l'échelle Y de 0 à 100%
+                        plot_bgcolor="rgba(240, 240, 240, 0.5)",
+                        margin=dict(l=20, r=20, t=40, b=20),
+                        height=500
+                    )
+                    
+                    # Améliorer l'apparence du graphique
+                    fig.update_traces(
+                        marker_line_width=1,
+                        marker_line_color="white",
+                        opacity=0.8,
+                        hovertemplate='<b>%{x}</b><br>Type: %{fullData.name}<br>Pourcentage: %{y:.1f}%<extra></extra>'
+                    )
+                    
+                    # Afficher le graphique
+                    st.plotly_chart(fig, use_container_width=True)
+                else:
+                    st.info("Pas assez de données pour afficher une répartition par mois.")
+            else:
+                st.warning("Aucune date valide trouvée après conversion.")
+        except Exception as e:
+            st.error(f"Erreur lors de l'analyse temporelle: {e}")
             
-            # Option pour voir tous les exemples
-            if st.button(f"Voir tous les exemples ({len(examples)} tweets)"):
-                st.dataframe(examples[[text_column, 'sentiment_category']], use_container_width=True)
+            # Alternative: créer un exemple pour démonstration avec des dates fictives
+            st.info("Génération d'un exemple de démonstration avec des dates fictives...")
+            
+            # Créer des données de démonstration pour le graphique mensuel
+            demo_months = ['Janvier 2023', 'Février 2023', 'Mars 2023', 'Avril 2023', 'Mai 2023', 'Juin 2023']
+            categories = ['Facturation', 'Application/Site', 'Chauffage/Eau', 'Service Client', 'Installation', 'Autre']
+            
+            # Créer un DataFrame de démonstration
+            demo_data = []
+            for month in demo_months:
+                for category in categories:
+                    # Générer un nombre aléatoire pour chaque catégorie et mois
+                    count = np.random.randint(5, 30)
+                    demo_data.append({
+                        'month_name': month,
+                        'problem_category': category,
+                        'count': count
+                    })
+            
+            demo_df = pd.DataFrame(demo_data)
+            
+            # Créer le graphique de démonstration
+            fig = px.bar(
+                demo_df, 
+                x='month_name', 
+                y='count',
+                color='problem_category',
+                title="DÉMONSTRATION - Évolution mensuelle des types de problèmes",
+                category_orders={"month_name": demo_months},
+                color_discrete_sequence=px.colors.qualitative.Bold
+            )
+            
+            fig.update_layout(
+                barmode='stack',
+                xaxis_title="Mois",
+                yaxis_title="Nombre de problèmes",
+                legend_title="Type de problème"
+            )
+            
+            st.plotly_chart(fig, use_container_width=True)
+            st.caption("Note: Ce graphique est une démonstration avec des données fictives")
+    else:
+        # Créer des données de démonstration avec dates fictives
+        st.info("Les données ne contiennent pas d'information de date. Affichage d'un exemple avec des données fictives.")
+        
+        # Code pour générer un exemple similaire à celui ci-dessus
 
 # Footer
 st.markdown("---")
