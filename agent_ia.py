@@ -30,10 +30,25 @@ def process_tweet(tweet_index):
         {"role": "system", "content": "Tu vas recevoir des tweets de plainte et répondre toujours dans le format suivant :"
                                       "1. Tu vas devoir les noter de 0 à 100, 100 étant la situation la plus grave et 0 la situation la moins grave."
                                       "2. Si le sentiment de l'utilisateur est plus positif, neutre ou négatif envers ENGIE. Réponds juste par positif, neutre ou négatif."
-                                      "3. Répartir les différrents tweet dans les catégories suivantes :Problème de facturation OU Panne et urgences OU Service client injoignable OU Probleme avec l'application OU Delai d'intervention OU Problème d'age OU Information complémentaire."
-                                      "4. Si aucune catégorie n’est présente, rentre le dans la catégorie: Autre."
+                                      "3. Répartir les différrents tweet dans les catégories suivantes, maximum une catégorie par tweets : 'Problème de facturation' OU 'Panne et urgences' OU Service client injoignable OU Problème avec l'application OU Delai d'intervention OU Problème d'age OU Information complémentaire OU remerciement."
+                                      "4. Si aucune catégorie n’est présente, rentre le dans la catégorie: autre."
                                       
-                                      "Point important fait attention au sarcasme et à l'ironie, ils peuvent être mal interprétés."},
+                                      "Point important;"
+                                      "-fait attention au sarcasme et à l'ironie, ils peuvent être mal interprétés."
+                                      "-Ne rajoute pas de '**'  dans tes réponses."
+                                      
+                                      "Exemple de réponse :"
+                                      "Note: 50"
+                                      "Sentiment: neutre"
+                                      "Catégorie: Problème de facturation"
+                                      
+                                      "Exemple de mauvais réponse :"
+                                      "Note: 50"
+                                      "Sentiment: neutre"
+                                      "Catégorie: Catégorie: Problème de facturation"
+                                      
+                                      "pourquoi c'est une mauvaise réponse ?"
+                                      "Il y a une répétition du mots catégorie."},
         {"role": "user", "content": content}
     ]
         

@@ -1,578 +1,578 @@
 ID,date,score,sentiment,category
-1,date,80,négatif,service client injoignable
-2,2023-11-16,80,négatif,service client injoignable
-3,2023-11-26,60,inconnu,problème avec l'application
-4,2023-12-21,90,négatif,délai d'intervention
+1,date,70,négatif,problème de facturation
+2,2023-11-16,70,négatif,service client injoignable
+3,2023-11-26,60,négatif,problème avec l'application
+4,2023-12-21,85,négatif,Catégorie: Delai d'intervention
 5,2023-12-28,80,négatif,service client injoignable
-6,2023-12-29,70,négatif,service client injoignable
-7,2023-12-29,75,négatif,service client injoignable
+6,2023-12-29,70,négatif,panne et urgences
+7,2023-12-29,70,négatif,service client injoignable
 8,2023-12-29,70,négatif,service client injoignable
-9,2023-12-29,60,inconnu,problème de facturation
-10,2023-12-30,85,négatif,délai d'intervention
-11,2024-01-01,80,négatif,problème de facturation
-12,2024-01-01,70,négatif,problème de facturation
-13,2024-01-02,85,négatif,délai d'intervention
+9,2023-12-29,60,négatif,problème de facturation
+10,2023-12-30,80,négatif,Catégorie: Delai d'intervention
+11,2024-01-01,70,négatif,problème de facturation
+12,2024-01-01,70,neutre,problème de facturation
+13,2024-01-02,80,négatif,Catégorie: Delai d'intervention
 14,2024-01-03,70,négatif,service client injoignable
 15,2024-01-03,40,neutre,problème avec l'application
 16,2024-01-04,70,négatif,problème de facturation
-17,2024-01-04,85,négatif,problème de facturation
-18,2024-01-04,,** négatif,** problème de facturation
-19,2024-01-05,80,négatif,délai d'intervention
-20,2024-01-05,85,négatif,3. Catégorie : Delai d'intervention
-21,2024-01-06,70,négatif,"service client injoignable, problème de facturation"
+17,2024-01-04,70,négatif,problème de facturation
+18,2024-01-04,80,négatif,problème de facturation
+19,2024-01-05,70,négatif,délai d'intervention
+20,2024-01-05,70,négatif,Catégorie: Delai d'intervention
+21,2024-01-06,70,négatif,service client injoignable
 22,2024-01-06,80,négatif,problème de facturation
-23,2024-01-08,60,négatif,problème avec l'application
-24,2024-01-08,60,inconnu,problème avec l'application
+23,2024-01-08,60,neutre,problème avec l'application
+24,2024-01-08,60,négatif,problème avec l'application
 25,2024-01-08,70,négatif,problème avec l'application
 26,2024-01-08,80,négatif,problème avec l'application
-27,2024-01-08,70,négatif,problème avec l'application
-28,2024-01-09,70,négatif,problème avec l'application
-29,2024-01-09,80,négatif,problème de facturation
-30,2024-01-10,85,négatif,panne et urgences
-31,2024-01-11,85,négatif,"délai d'intervention, service client injoignable"
-32,2024-01-12,80,négatif,délai d'intervention
-33,2024-01-12,60,inconnu,service client injoignable
+27,2024-01-08,70,négatif,Catégorie: Probleme avec l'application
+28,2024-01-09,60,négatif,problème avec l'application
+29,2024-01-09,70,négatif,problème de facturation
+30,2024-01-10,80,négatif,panne et urgences
+31,2024-01-11,80,négatif,Catégorie: Delai d'intervention
+32,2024-01-12,70,négatif,panne et urgences
+33,2024-01-12,30,neutre,Catégorie: autre
 34,2024-01-12,70,neutre,panne et urgences
-35,2024-01-12,60,négatif,information complémentaire
-36,2024-01-13,90,négatif,délai d'intervention
+35,2024-01-12,70,négatif,problème de facturation
+36,2024-01-13,85,négatif,délai d'intervention
 37,2024-01-14,70,négatif,service client injoignable
-38,2024-01-15,85,négatif,délai d'intervention
+38,2024-01-15,90,négatif,Catégorie: Delai d'intervention
 39,2024-01-16,60,négatif,problème de facturation
-40,2024-01-17,80,négatif,autre
-41,2024-01-17,60,négatif,autre
+40,2024-01-17,70,négatif,Catégorie: autre
+41,2024-01-17,30,négatif,Catégorie: autre
 42,2024-01-17,70,négatif,problème de facturation
-43,2024-01-17,90,négatif,délai d'intervention
+43,2024-01-17,90,négatif,Catégorie: Delai d'intervention
 44,2024-01-17,70,négatif,problème de facturation
-45,2024-01-19,85,négatif,3. Catégorie : Delai d'intervention
-46,2024-01-20,60,négatif,problème de facturation
-47,2024-01-21,85,négatif,problème de facturation
-48,2024-01-21,80,négatif,panne et urgences
-49,2024-01-21,30,neutre,problème avec l'application
-50,2024-01-22,80,négatif,problème de facturation
-51,2024-01-22,85,négatif,3. Catégorie : Delai d'intervention
-52,2024-01-23,70,inconnu,autre
+45,2024-01-19,80,négatif,panne et urgences
+46,2024-01-20,70,négatif,problème de facturation
+47,2024-01-21,75,négatif,problème de facturation
+48,2024-01-21,70,négatif,panne et urgences
+49,2024-01-21,30,neutre,Catégorie: Probleme avec l'application
+50,2024-01-22,70,négatif,service client injoignable
+51,2024-01-22,80,négatif,Catégorie: Delai d'intervention
+52,2024-01-23,70,négatif,Catégorie: autre
 53,2024-01-24,70,négatif,problème de facturation
 54,2024-01-24,80,négatif,problème de facturation
-55,2024-01-24,85,négatif,"problème de facturation, delai d'intervention"
-56,2024-01-25,60,inconnu,problème de facturation
-57,2024-01-25,40,neutre,autre
-58,2024-01-26,80,négatif,service client injoignable
-59,2024-01-26,90,négatif,"problème de facturation, délai d'intervention, service client injoignable"
-60,2024-01-27,85,négatif,3. Catégorie : Delai d'intervention
-61,2024-01-27,80,négatif,problème de facturation
-62,2024-01-27,85,négatif,service client injoignable
-63,2024-01-30,80,négatif,problème de facturation
-64,2024-01-30,80,négatif,problème de facturation
-65,2024-01-31,60,négatif,problème avec l'application
-66,2024-01-31,90,négatif,panne et urgences
-67,2024-01-31,80,négatif,problème de facturation
-68,2024-01-31,80,négatif,autre
-69,2024-01-31,0,positif,autre
+55,2024-01-24,80,négatif,problème de facturation
+56,2024-01-25,60,négatif,problème de facturation
+57,2024-01-25,40,neutre,information complémentaire
+58,2024-01-26,70,négatif,service client injoignable
+59,2024-01-26,70,négatif,délai d'intervention
+60,2024-01-27,80,négatif,service client injoignable
+61,2024-01-27,70,négatif,problème de facturation
+62,2024-01-27,70,négatif,service client injoignable
+63,2024-01-30,70,négatif,problème de facturation
+64,2024-01-30,70,négatif,problème de facturation
+65,2024-01-31,60,neutre,Catégorie: Probleme avec l'application
+66,2024-01-31,100,négatif,panne et urgences
+67,2024-01-31,70,négatif,problème de facturation
+68,2024-01-31,70,négatif,Catégorie: autre
+69,2024-01-31,0,positif,Catégorie: autre
 70,2024-01-31,70,négatif,service client injoignable
-71,2024-02-01,60,négatif,problème avec l'application
-72,2024-02-01,60,négatif,problème avec l'application
-73,2024-02-01,80,négatif,problème de facturation
-74,2024-02-02,70,négatif,3. Catégorie : Delai d'intervention
-75,2024-02-02,70,négatif,autre
-76,2024-02-03,70,négatif,autre
+71,2024-02-01,30,négatif,problème avec l'application
+72,2024-02-01,40,négatif,Catégorie: Probleme avec l'application
+73,2024-02-01,70,négatif,problème de facturation
+74,2024-02-02,70,négatif,Catégorie: Delai d'intervention
+75,2024-02-02,60,négatif,Catégorie: autre
+76,2024-02-03,70,négatif,service client injoignable
 77,2024-02-05,60,neutre,problème avec l'application
-78,2024-02-05,60,négatif,problème avec l'application
-79,2024-02-06,80,négatif,problème de facturation
-80,2024-02-07,85,négatif,problème de facturation
+78,2024-02-05,70,négatif,problème avec l'application
+79,2024-02-06,70,négatif,problème de facturation
+80,2024-02-07,80,négatif,problème de facturation
 81,2024-02-07,70,négatif,problème de facturation
-82,2024-02-08,85,négatif,problème de facturation
+82,2024-02-08,70,négatif,problème de facturation
 83,2024-02-09,70,négatif,problème avec l'application
-84,2024-02-09,70,négatif,problème avec l'application
+84,2024-02-09,70,négatif,Catégorie: Probleme avec l'application
 85,2024-02-09,80,négatif,problème de facturation
-86,2024-02-09,90,négatif,problème de facturation
-87,2024-02-10,50,négatif,information complémentaire
-88,2024-02-11,85,négatif,"problème de facturation, service client injoignable"
+86,2024-02-09,80,négatif,problème de facturation
+87,2024-02-10,70,négatif,Catégorie: autre
+88,2024-02-11,80,négatif,problème de facturation
 89,2024-02-12,70,négatif,problème de facturation
-90,2024-02-12,60,négatif,autre
+90,2024-02-12,60,négatif,problème avec l'application
 91,2024-02-12,80,négatif,panne et urgences
-92,2024-02-13,70,négatif,3. Catégorie : Delai d'intervention
+92,2024-02-13,70,négatif,Catégorie: Delai d'intervention
 93,2024-02-13,70,négatif,service client injoignable
-94,2024-02-13,80,négatif,3. Catégorie : Delai d'intervention
+94,2024-02-13,80,négatif,Catégorie: Delai d'intervention
 95,2024-02-14,40,négatif,information complémentaire
-96,2024-02-15,80,négatif,problème de facturation
-97,2024-02-17,80,négatif,problème de facturation
-98,2024-02-17,60,négatif,problème de facturation
+96,2024-02-15,90,négatif,problème de facturation
+97,2024-02-17,70,négatif,problème de facturation
+98,2024-02-17,70,négatif,problème de facturation
 99,2024-02-18,60,négatif,problème avec l'application
 100,2024-02-19,60,neutre,information complémentaire
-101,2024-02-19,70,négatif,problème de facturation
-102,2024-02-19,85,négatif,problème de facturation
-103,2024-02-20,30,neutre,autre
-104,2024-02-20,80,négatif,problème de facturation
-105,2024-02-20,70,négatif,problème de facturation
-106,2024-02-21,70,négatif,autre
-107,2024-02-21,70,négatif,problème de facturation
-108,2024-02-22,85,inconnu,problème de facturation
-109,2024-02-22,90,négatif,problème de facturation
-110,2024-02-22,20,positif,autre
-111,2024-02-23,60,négatif,délai d'intervention
+101,2024-02-19,70,négatif,panne et urgences
+102,2024-02-19,75,négatif,problème de facturation
+103,2024-02-20,20,neutre,Catégorie: autre
+104,2024-02-20,70,négatif,problème de facturation
+105,2024-02-20,60,négatif,problème de facturation
+106,2024-02-21,70,négatif,information complémentaire
+107,2024-02-21,80,négatif,problème de facturation
+108,2024-02-22,80,négatif,problème de facturation
+109,2024-02-22,80,négatif,problème de facturation
+110,2024-02-22,10,positif,Catégorie: remerciement
+111,2024-02-23,60,négatif,Catégorie: Delai d'intervention
 112,2024-02-25,80,négatif,problème de facturation
-113,2024-02-25,90,négatif,"problème de facturation, service client injoignable"
-114,2024-02-26,80,inconnu,panne et urgences
+113,2024-02-25,80,négatif,problème de facturation
+114,2024-02-26,80,négatif,panne et urgences
 115,2024-02-26,80,négatif,problème de facturation
 116,2024-02-27,70,négatif,problème de facturation
 117,2024-02-27,0,neutre,information complémentaire
-118,2024-02-27,70,négatif,panne et urgences
+118,2024-02-27,70,neutre,panne et urgences
 119,2024-02-28,90,négatif,problème de facturation
-120,2024-02-28,85,négatif,délai d'intervention
-121,2024-02-28,80,négatif,service client injoignable
-122,2024-02-28,20,neutre,autre
-123,2024-02-28,80,négatif,service client injoignable
+120,2024-02-28,80,négatif,délai d'intervention
+121,2024-02-28,70,négatif,service client injoignable
+122,2024-02-28,20,neutre,Catégorie: autre
+123,2024-02-28,70,neutre,Catégorie: Delai d'intervention
 124,2024-02-28,80,négatif,problème de facturation
-125,2024-02-28,70,négatif,service client injoignable
-126,2024-02-28,80,négatif,3. Catégorie : Delai d'intervention
-127,2024-02-29,80,négatif,problème de facturation
-128,2024-03-01,80,négatif,autre
+125,2024-02-28,60,négatif,problème de facturation
+126,2024-02-28,80,négatif,Catégorie: Delai d'intervention
+127,2024-02-29,70,négatif,problème de facturation
+128,2024-03-01,80,négatif,Catégorie: autre
 129,2024-03-01,80,négatif,problème de facturation
 130,2024-03-01,80,négatif,service client injoignable
-131,2024-03-01,85,négatif,problème d'âge
+131,2024-03-01,80,négatif,problème d'âge
 132,2024-03-01,80,négatif,service client injoignable
 133,2024-03-01,80,négatif,problème de facturation
-134,2024-03-03,85,négatif,problème de facturation
+134,2024-03-03,80,négatif,problème de facturation
 135,2024-03-04,70,négatif,service client injoignable
-136,2024-03-04,70,négatif,service client injoignable
-137,2024-03-04,60,négatif,problème avec l'application
-138,2024-03-05,30,neutre,information complémentaire
+136,2024-03-04,60,négatif,service client injoignable
+137,2024-03-04,40,négatif,problème avec l'application
+138,2024-03-05,20,neutre,information complémentaire
 139,2024-03-05,70,négatif,problème de facturation
 140,2024-03-06,10,neutre,information complémentaire
 141,2024-03-06,70,négatif,problème de facturation
 142,2024-03-07,70,négatif,problème de facturation
-143,2024-03-08,60,neutre,problème avec l'application
+143,2024-03-08,60,neutre,Catégorie: Probleme avec l'application
 144,2024-03-08,70,négatif,service client injoignable
-145,2024-03-08,40,neutre,problème de facturation
-146,2024-03-08,70,négatif,3. Catégorie : Probleme avec l'application
+145,2024-03-08,30,neutre,problème avec l'application
+146,2024-03-08,70,négatif,problème avec l'application
 147,2024-03-08,70,négatif,service client injoignable
-148,2024-03-08,70,négatif,service client injoignable
-149,2024-03-10,80,négatif,problème de facturation
-150,2024-03-10,80,négatif,problème de facturation
+148,2024-03-08,70,négatif,problème de facturation
+149,2024-03-10,70,négatif,problème de facturation
+150,2024-03-10,70,négatif,problème de facturation
 151,2024-03-11,80,négatif,problème de facturation
-152,2024-03-12,,inconnu,autre
-153,2024-03-12,80,négatif,3. Catégorie : Delai d'intervention
-154,2024-03-13,80,négatif,problème de facturation
-155,2024-03-13,80,négatif,délai d'intervention
-156,2024-03-14,70,négatif,problème avec l'application
+152,2024-03-12,70,négatif,problème de facturation
+153,2024-03-12,70,négatif,délai d'intervention
+154,2024-03-13,70,négatif,problème de facturation
+155,2024-03-13,70,négatif,Catégorie: Delai d'intervention
+156,2024-03-14,70,négatif,Catégorie: Probleme avec l'application
 157,2024-03-14,70,négatif,information complémentaire
 158,2024-03-15,40,neutre,information complémentaire
-159,2024-03-15,90,négatif,problème de facturation
-160,2024-03-18,70,négatif,service client injoignable
-161,2024-03-18,80,négatif,problème de facturation
-162,2024-03-19,80,négatif,problème de facturation
-163,2024-03-19,85,négatif,problème de facturation
+159,2024-03-15,80,négatif,problème de facturation
+160,2024-03-18,60,négatif,service client injoignable
+161,2024-03-18,70,négatif,problème de facturation
+162,2024-03-19,70,négatif,problème de facturation
+163,2024-03-19,90,négatif,problème de facturation
 164,2024-03-19,60,négatif,problème avec l'application
-165,2024-03-20,80,négatif,délai d'intervention
-166,2024-03-21,30,inconnu,problème avec l'application
-167,2024-03-21,70,négatif,problème de facturation
+165,2024-03-20,80,négatif,Catégorie: Delai d'intervention
+166,2024-03-21,30,neutre,Catégorie: Probleme avec l'application
+167,2024-03-21,60,négatif,problème de facturation
 168,2024-03-22,70,négatif,problème de facturation
-169,2024-03-22,70,neutre,autre
-170,2024-03-23,50,neutre,information complémentaire
+169,2024-03-22,30,neutre,information complémentaire
+170,2024-03-23,60,neutre,information complémentaire
 171,2024-03-23,80,négatif,problème de facturation
-172,2024-03-25,80,négatif,problème de facturation
+172,2024-03-25,70,négatif,problème de facturation
 173,2024-03-25,70,négatif,problème de facturation
-174,2024-03-25,85,négatif,"service client injoignable, delai d'intervention"
+174,2024-03-25,80,négatif,problème de facturation
 175,2024-03-26,90,négatif,service client injoignable
-176,2024-03-26,80,négatif,problème de facturation
-177,2024-03-27,85,négatif,"service client injoignable, delai d'intervention"
-178,2024-03-27,60,inconnu,problème de facturation
+176,2024-03-26,70,négatif,problème de facturation
+177,2024-03-27,75,négatif,service client injoignable
+178,2024-03-27,60,neutre,problème de facturation
 179,2024-03-27,70,négatif,problème de facturation
-180,2024-03-27,90,négatif,panne et urgences
-181,2024-03-28,90,négatif,problème de facturation
-182,2024-03-30,20,neutre,information complémentaire
+180,2024-03-27,80,négatif,panne et urgences
+181,2024-03-28,90,négatif,panne et urgences
+182,2024-03-30,10,neutre,service client injoignable
 183,2024-04-01,70,négatif,problème de facturation
-184,2024-04-02,80,négatif,délai d'intervention
-185,2024-04-02,80,négatif,service client injoignable
-186,2024-04-02,70,négatif,service client injoignable
-187,2024-04-02,80,inconnu,panne et urgences
+184,2024-04-02,80,négatif,Catégorie: Delai d'intervention
+185,2024-04-02,70,négatif,service client injoignable
+186,2024-04-02,60,négatif,service client injoignable
+187,2024-04-02,70,négatif,panne et urgences
 188,2024-04-03,90,négatif,panne et urgences
-189,2024-04-03,90,négatif,problème de facturation
-190,2024-04-03,70,négatif,3. Catégorie : Delai d'intervention
-191,2024-04-03,80,négatif,autre
-192,2024-04-03,85,négatif,service client injoignable
-193,2024-04-04,85,négatif,problème de facturation
+189,2024-04-03,80,négatif,problème de facturation
+190,2024-04-03,70,négatif,Catégorie: Delai d'intervention
+191,2024-04-03,70,négatif,Catégorie: Problème d'age
+192,2024-04-03,80,négatif,service client injoignable
+193,2024-04-04,90,négatif,problème de facturation
 194,2024-04-04,80,négatif,problème de facturation
-195,2024-04-05,,inconnu,autre
-196,2024-04-06,80,négatif,problème de facturation
-197,2024-04-07,40,neutre,information complémentaire
-198,2024-04-08,40,négatif,autre
+195,2024-04-05,90,négatif,service client injoignable
+196,2024-04-06,70,négatif,problème de facturation
+197,2024-04-07,30,neutre,information complémentaire
+198,2024-04-08,30,négatif,Catégorie: autre
 199,2024-04-08,80,négatif,problème de facturation
 200,2024-04-08,80,négatif,problème de facturation
-201,2024-04-09,85,négatif,panne et urgences
+201,2024-04-09,80,négatif,panne et urgences
 202,2024-04-09,70,négatif,service client injoignable
-203,2024-04-10,70,négatif,autre
+203,2024-04-10,70,négatif,Catégorie: autre
 204,2024-04-11,80,négatif,panne et urgences
 205,2024-04-11,80,négatif,problème de facturation
-206,2024-04-12,85,négatif,problème de facturation
-207,2024-04-15,60,neutre,information complémentaire
-208,2024-04-15,70,négatif,problème de facturation
-209,2024-04-16,85,négatif,problème de facturation
-210,2024-04-16,80,négatif,problème de facturation
-211,2024-04-16,80,négatif,problème de facturation
-212,2024-04-17,85,négatif,problème de facturation
+206,2024-04-12,80,négatif,problème de facturation
+207,2024-04-15,30,neutre,service client injoignable
+208,2024-04-15,60,négatif,problème de facturation
+209,2024-04-16,80,négatif,problème de facturation
+210,2024-04-16,70,négatif,problème de facturation
+211,2024-04-16,70,négatif,problème de facturation
+212,2024-04-17,80,négatif,problème de facturation
 213,2024-04-17,70,négatif,service client injoignable
 214,2024-04-17,70,négatif,problème de facturation
-215,2024-04-18,85,négatif,3. Catégorie : Delai d'intervention
+215,2024-04-18,80,négatif,Catégorie: Delai d'intervention
 216,2024-04-21,70,négatif,service client injoignable
-217,2024-04-22,80,négatif,problème de facturation
-218,2024-04-23,80,négatif,problème de facturation
-219,2024-04-23,85,négatif,problème de facturation
-220,2024-04-24,70,négatif,problème de facturation
-221,2024-04-25,80,négatif,problème de facturation
-222,2024-04-26,80,négatif,service client injoignable
-223,2024-04-30,60,négatif,information complémentaire
+217,2024-04-22,70,négatif,problème de facturation
+218,2024-04-23,70,négatif,problème de facturation
+219,2024-04-23,80,négatif,problème de facturation
+220,2024-04-24,75,négatif,problème de facturation
+221,2024-04-25,70,négatif,problème de facturation
+222,2024-04-26,80,négatif,Catégorie: autre
+223,2024-04-30,60,négatif,Catégorie: autre
 224,2024-05-02,70,négatif,problème de facturation
-225,2024-05-02,85,négatif,"problème de facturation, delai d'intervention"
-226,2024-05-02,50,neutre,information complémentaire
+225,2024-05-02,80,négatif,problème de facturation
+226,2024-05-02,30,négatif,problème de facturation
 227,2024-05-03,60,négatif,problème de facturation
-228,2024-05-03,70,négatif,problème de facturation
+228,2024-05-03,60,négatif,problème de facturation
 229,2024-05-03,70,négatif,problème avec l'application
-230,2024-05-06,80,négatif,problème de facturation
-231,2024-05-06,60,négatif,problème de facturation
-232,2024-05-08,80,négatif,problème de facturation
-233,2024-05-11,80,négatif,problème de facturation
-234,2024-05-11,80,négatif,problème de facturation
+230,2024-05-06,70,négatif,problème de facturation
+231,2024-05-06,40,neutre,problème de facturation
+232,2024-05-08,70,négatif,problème de facturation
+233,2024-05-11,70,négatif,problème de facturation
+234,2024-05-11,70,négatif,problème de facturation
 235,2024-05-13,60,négatif,problème de facturation
 236,2024-05-13,60,négatif,service client injoignable
 237,2024-05-13,70,négatif,service client injoignable
-238,2024-05-14,80,négatif,problème de facturation
+238,2024-05-14,70,négatif,problème de facturation
 239,2024-05-15,80,négatif,problème de facturation
-240,2024-05-16,80,négatif,problème de facturation
-241,2024-05-16,60,neutre,problème de facturation
-242,2024-05-16,85,négatif,problème de facturation
+240,2024-05-16,70,négatif,problème de facturation
+241,2024-05-16,60,négatif,problème de facturation
+242,2024-05-16,80,négatif,problème de facturation
 243,2024-05-16,70,négatif,problème de facturation
-244,2024-05-18,75,négatif,service client injoignable
-245,2024-05-19,80,négatif,problème de facturation
-246,2024-05-20,60,inconnu,service client injoignable
+244,2024-05-18,70,négatif,service client injoignable
+245,2024-05-19,70,négatif,problème de facturation
+246,2024-05-20,70,négatif,service client injoignable
 247,2024-05-20,70,négatif,problème de facturation
 248,2024-05-21,0,neutre,information complémentaire
-249,2024-05-22,80,négatif,problème de facturation
+249,2024-05-22,70,négatif,problème de facturation
 250,2024-05-22,80,négatif,problème de facturation
-251,2024-05-22,80,négatif,problème de facturation
-252,2024-05-22,20,neutre,information complémentaire
-253,2024-05-23,90,négatif,panne et urgences
+251,2024-05-22,70,négatif,problème de facturation
+252,2024-05-22,30,neutre,information complémentaire
+253,2024-05-23,80,négatif,panne et urgences
 254,2024-05-23,80,négatif,problème de facturation
-255,2024-05-24,,inconnu,autre
-256,2024-05-25,20,négatif,service client injoignable
+255,2024-05-24,70,négatif,service client injoignable
+256,2024-05-25,20,neutre,information complémentaire
 257,2024-05-26,80,négatif,problème de facturation
-258,2024-05-26,85,négatif,problème de facturation
+258,2024-05-26,80,négatif,problème de facturation
 259,2024-05-26,70,négatif,problème de facturation
-260,2024-05-28,70,négatif,information complémentaire
-261,2024-05-29,70,négatif,problème de facturation
-262,2024-05-29,85,négatif,problème de facturation
-263,2024-05-31,85,négatif,problème de facturation
-264,2024-05-31,80,négatif,problème de facturation
-265,2024-06-03,60,négatif,problème avec l'application
+260,2024-05-28,30,neutre,information complémentaire
+261,2024-05-29,80,négatif,problème de facturation
+262,2024-05-29,80,négatif,problème de facturation
+263,2024-05-31,80,négatif,problème de facturation
+264,2024-05-31,70,négatif,problème de facturation
+265,2024-06-03,60,neutre,problème avec l'application
 266,2024-06-05,70,négatif,problème de facturation
 267,2024-06-05,70,négatif,problème de facturation
-268,2024-06-06,80,négatif,autre
+268,2024-06-06,80,négatif,Catégorie: autre
 269,2024-06-06,70,négatif,problème de facturation
-270,2024-06-06,80,négatif,3. Catégorie : Delai d'intervention
+270,2024-06-06,70,négatif,service client injoignable
 271,2024-06-06,70,négatif,problème avec l'application
-272,2024-06-07,60,inconnu,service client injoignable
-273,2024-06-07,60,négatif,service client injoignable
-274,2024-06-07,60,négatif,service client injoignable
+272,2024-06-07,60,négatif,service client injoignable
+273,2024-06-07,70,négatif,service client injoignable
+274,2024-06-07,60,négatif,information complémentaire
 275,2024-06-09,70,négatif,service client injoignable
-276,2024-06-11,85,négatif,service client injoignable
+276,2024-06-11,70,négatif,service client injoignable
 277,2024-06-12,90,négatif,problème de facturation
-278,2024-06-18,80,négatif,problème de facturation
-279,2024-06-19,0,positif,autre
-280,2024-06-20,30,neutre,autre
-281,2024-06-22,85,négatif,problème de facturation
+278,2024-06-18,75,négatif,problème de facturation
+279,2024-06-19,0,positif,information complémentaire
+280,2024-06-20,20,neutre,information complémentaire
+281,2024-06-22,80,négatif,problème de facturation
 282,2024-06-24,70,négatif,problème de facturation
-283,2024-06-24,85,négatif,problème de facturation
-284,2024-06-27,80,négatif,problème avec l'application
-285,2024-06-27,0,positif,autre
+283,2024-06-24,80,négatif,problème de facturation
+284,2024-06-27,70,négatif,information complémentaire
+285,2024-06-27,10,positif,Catégorie: remerciement
 286,2024-06-28,60,négatif,service client injoignable
-287,2024-07-01,70,négatif,délai d'intervention
-288,2024-07-02,80,négatif,problème de facturation
-289,2024-07-04,85,négatif,problème de facturation
+287,2024-07-01,70,négatif,Catégorie: Delai d'intervention
+288,2024-07-02,70,négatif,problème de facturation
+289,2024-07-04,80,négatif,problème de facturation
 290,2024-07-04,80,négatif,problème de facturation
-291,2024-07-06,70,négatif,problème de facturation
+291,2024-07-06,60,négatif,problème de facturation
 292,2024-07-07,70,négatif,problème de facturation
 293,2024-07-09,80,négatif,problème de facturation
-294,2024-07-10,80,négatif,problème de facturation
-295,2024-07-12,90,négatif,"service client injoignable, delai d'intervention"
-296,2024-07-12,70,négatif,problème de facturation
-297,2024-07-16,80,négatif,information complémentaire
-298,2024-07-16,80,négatif,problème avec l'application
-299,2024-07-16,50,neutre,autre
+294,2024-07-10,75,négatif,problème de facturation
+295,2024-07-12,90,négatif,Catégorie: Delai d'intervention
+296,2024-07-12,70,neutre,problème de facturation
+297,2024-07-16,70,négatif,information complémentaire
+298,2024-07-16,80,négatif,Catégorie: Probleme avec l'application
+299,2024-07-16,30,neutre,Catégorie: autre
 300,2024-07-17,80,négatif,problème de facturation
-301,2024-07-17,85,négatif,problème de facturation
-302,2024-07-18,30,neutre,information complémentaire
-303,2024-07-19,80,négatif,délai d'intervention
+301,2024-07-17,80,négatif,problème de facturation
+302,2024-07-18,20,neutre,information complémentaire
+303,2024-07-19,70,négatif,Catégorie: Delai d'intervention
 304,2024-07-19,70,négatif,problème avec l'application
-305,2024-07-21,80,négatif,problème de facturation
-306,2024-07-22,90,négatif,panne et urgences
+305,2024-07-21,70,négatif,problème de facturation
+306,2024-07-22,80,négatif,panne et urgences
 307,2024-07-23,70,négatif,service client injoignable
-308,2024-07-23,80,négatif,problème de facturation
-309,2024-07-25,80,négatif,problème de facturation
-310,2024-07-27,90,négatif,problème de facturation
-311,2024-07-29,80,négatif,"problème de facturation, service client injoignable"
-312,2024-07-29,,positif,autre
-313,2024-07-30,80,négatif,service client injoignable
-314,2024-07-31,20,neutre,information complémentaire
+308,2024-07-23,70,négatif,problème de facturation
+309,2024-07-25,70,négatif,problème de facturation
+310,2024-07-27,80,négatif,problème de facturation
+311,2024-07-29,75,négatif,problème de facturation
+312,2024-07-29,0,positif,Catégorie: remerciement
+313,2024-07-30,80,négatif,Catégorie: autre
+314,2024-07-31,10,neutre,information complémentaire
 315,2024-08-04,80,négatif,panne et urgences
 316,2024-08-05,70,négatif,problème de facturation
 317,2024-08-05,70,négatif,service client injoignable
-318,2024-08-05,90,négatif,panne et urgences
-319,2024-08-06,50,neutre,autre
-320,2024-08-06,20,neutre,autre
+318,2024-08-05,80,négatif,panne et urgences
+319,2024-08-06,30,neutre,information complémentaire
+320,2024-08-06,30,neutre,information complémentaire
 321,2024-08-08,70,négatif,problème de facturation
 322,2024-08-09,80,négatif,service client injoignable
-323,2024-08-09,70,négatif,"problème avec l'application, problème de facturation"
-324,2024-08-10,50,neutre,information complémentaire
-325,2024-08-11,80,négatif,problème de facturation
-326,2024-08-13,70,négatif,délai d'intervention
-327,2024-08-13,70,négatif,problème avec l'application
-328,2024-08-14,20,neutre,service client injoignable
-329,2024-08-20,80,négatif,problème avec l'application
+323,2024-08-09,60,négatif,problème avec l'application
+324,2024-08-10,20,neutre,information complémentaire
+325,2024-08-11,70,négatif,problème de facturation
+326,2024-08-13,70,négatif,Catégorie: Delai d'intervention
+327,2024-08-13,70,négatif,problème de facturation
+328,2024-08-14,30,neutre,service client injoignable
+329,2024-08-20,70,négatif,Catégorie: autre
 330,2024-08-21,80,négatif,service client injoignable
-331,2024-08-21,60,négatif,problème avec l'application
+331,2024-08-21,70,négatif,Catégorie: Probleme avec l'application
 332,2024-08-23,60,négatif,problème avec l'application
 333,2024-08-23,70,négatif,problème de facturation
-334,2024-08-23,80,négatif,problème de facturation
-335,2024-08-23,80,négatif,problème de facturation
+334,2024-08-23,70,négatif,problème de facturation
+335,2024-08-23,70,négatif,problème de facturation
 336,2024-08-27,60,neutre,problème de facturation
-337,2024-08-27,20,négatif,problème de facturation
-338,2024-08-28,85,négatif,problème de facturation
-339,2024-08-28,60,négatif,problème avec l'application
+337,2024-08-27,30,négatif,problème de facturation
+338,2024-08-28,70,négatif,problème de facturation
+339,2024-08-28,60,négatif,Catégorie: Probleme avec l'application
 340,2024-08-29,60,négatif,problème de facturation
 341,2024-08-29,70,négatif,problème de facturation
-342,2024-08-30,85,négatif,3. Catégorie : Delai d'intervention
-343,2024-09-01,30,neutre,service client injoignable
+342,2024-08-30,70,négatif,service client injoignable
+343,2024-09-01,30,neutre,information complémentaire
 344,2024-09-03,60,négatif,problème de facturation
-345,2024-09-04,80,négatif,problème de facturation
-346,2024-09-05,80,négatif,problème de facturation
-347,2024-09-05,80,négatif,"problème de facturation, delai d'intervention"
-348,2024-09-05,80,négatif,service client injoignable
-349,2024-09-09,80,négatif,service client injoignable
-350,2024-09-10,0,positif,information complémentaire
+345,2024-09-04,70,négatif,problème de facturation
+346,2024-09-05,70,négatif,problème de facturation
+347,2024-09-05,70,négatif,problème de facturation
+348,2024-09-05,70,négatif,service client injoignable
+349,2024-09-09,80,négatif,problème de facturation
+350,2024-09-10,10,neutre,information complémentaire
 351,2024-09-10,70,négatif,problème de facturation
 352,2024-09-11,60,négatif,problème de facturation
-353,2024-09-11,80,négatif,problème de facturation
-354,2024-09-16,80,négatif,service client injoignable
+353,2024-09-11,70,négatif,problème de facturation
+354,2024-09-16,70,négatif,service client injoignable
 355,2024-09-16,100,négatif,panne et urgences
-356,2024-09-16,100,négatif,panne et urgences
+356,2024-09-16,90,négatif,panne et urgences
 357,2024-09-18,70,négatif,service client injoignable
 358,2024-09-18,60,négatif,problème avec l'application
-359,2024-09-20,20,neutre,information complémentaire
-360,2024-09-20,85,inconnu,problème de facturation
-361,2024-09-23,80,négatif,problème de facturation
-362,2024-09-24,30,inconnu,service client injoignable
-363,2024-09-25,80,négatif,service client injoignable
-364,2024-09-26,0,positif,autre
+359,2024-09-20,30,neutre,information complémentaire
+360,2024-09-20,80,négatif,problème de facturation
+361,2024-09-23,80,négatif,information complémentaire
+362,2024-09-24,30,neutre,Catégorie: autre
+363,2024-09-25,70,négatif,service client injoignable
+364,2024-09-26,0,positif,information complémentaire
 365,2024-09-27,70,négatif,service client injoignable
-366,2024-09-30,80,négatif,panne et urgences
-367,2024-10-02,90,négatif,"service client injoignable, delai d'intervention, problème d'installation"
-368,2024-10-03,60,négatif,problème avec l'application
+366,2024-09-30,70,négatif,panne et urgences
+367,2024-10-02,90,négatif,Catégorie: Delai d'intervention
+368,2024-10-03,40,neutre,problème avec l'application
 369,2024-10-03,70,négatif,service client injoignable
-370,2024-10-03,,inconnu,autre
+370,2024-10-03,20,neutre,information complémentaire
 371,2024-10-04,70,négatif,problème de facturation
 372,2024-10-04,70,négatif,service client injoignable
-373,2024-10-04,90,négatif,"délai d'intervention, problème d'age"
+373,2024-10-04,90,négatif,délai d'intervention
 374,2024-10-04,70,négatif,problème de facturation
 375,2024-10-04,80,négatif,problème de facturation
-376,2024-10-06,85,négatif,problème de facturation
+376,2024-10-06,80,négatif,problème de facturation
 377,2024-10-06,70,négatif,problème avec l'application
 378,2024-10-07,20,neutre,information complémentaire
 379,2024-10-08,40,négatif,problème avec l'application
 380,2024-10-09,90,négatif,panne et urgences
-381,2024-10-09,80,négatif,service client injoignable
-382,2024-10-10,90,négatif,3. Catégorie : Delai d'intervention
-383,2024-10-10,80,négatif,3. Catégorie : Delai d'intervention
-384,2024-10-11,60,négatif,autre
+381,2024-10-09,70,négatif,panne et urgences
+382,2024-10-10,80,négatif,Catégorie: Delai d'intervention
+383,2024-10-10,70,négatif,service client injoignable
+384,2024-10-11,70,négatif,Catégorie: autre
 385,2024-10-11,20,neutre,information complémentaire
-386,2024-10-14,80,négatif,service client injoignable
-387,2024-10-17,90,négatif,service client injoignable
+386,2024-10-14,70,négatif,problème de facturation
+387,2024-10-17,80,négatif,problème de facturation
 388,2024-10-17,60,négatif,problème avec l'application
-389,2024-10-17,80,négatif,3. Catégorie : Delai d'intervention
-390,2024-10-17,70,négatif,3. Catégorie : Delai d'intervention
+389,2024-10-17,70,négatif,Catégorie: Delai d'intervention
+390,2024-10-17,70,négatif,Catégorie: Delai d'intervention
 391,2024-10-18,60,négatif,problème avec l'application
-392,2024-10-18,80,négatif,problème de facturation
-393,2024-10-18,85,négatif,"panne et urgences, service client injoignable"
+392,2024-10-18,70,négatif,information complémentaire
+393,2024-10-18,80,négatif,panne et urgences
 394,2024-10-20,70,négatif,problème de facturation
 395,2024-10-20,70,négatif,problème avec l'application
-396,2024-10-21,90,négatif,problème de facturation
-397,2024-10-21,,inconnu,information complémentaire**
+396,2024-10-21,80,négatif,problème de facturation
+397,2024-10-21,30,neutre,information complémentaire
 398,2024-10-22,70,négatif,problème de facturation
-399,2024-10-22,80,négatif,problème avec l'application
-400,2024-10-22,60,négatif,autre
-401,2024-10-23,80,négatif,problème de facturation
-402,2024-10-30,50,neutre,information complémentaire
-403,2024-10-30,80,négatif,problème de facturation
-404,2024-10-30,85,négatif,problème de facturation
+399,2024-10-22,80,inconnu,Catégorie: Probleme avec l'application
+400,2024-10-22,60,négatif,Catégorie: autre
+401,2024-10-23,70,négatif,service client injoignable
+402,2024-10-30,30,neutre,information complémentaire
+403,2024-10-30,75,négatif,problème de facturation
+404,2024-10-30,70,négatif,problème de facturation
 405,2024-10-30,70,négatif,problème de facturation
-406,2024-10-31,,inconnu,autre
-407,2024-11-02,80,négatif,service client injoignable
-408,2024-11-03,70,négatif,problème avec l'application
+406,2024-10-31,70,négatif,problème avec l'application
+407,2024-11-02,70,négatif,service client injoignable
+408,2024-11-03,70,négatif,service client injoignable
 409,2024-11-04,70,négatif,service client injoignable
 410,2024-11-04,70,négatif,service client injoignable
-411,2024-11-05,40,neutre,service client injoignable
-412,2024-11-06,80,négatif,autre
-413,2024-11-06,90,négatif,3. Catégorie : Delai d'intervention
+411,2024-11-05,30,neutre,Catégorie: autre
+412,2024-11-06,70,négatif,panne et urgences
+413,2024-11-06,90,négatif,Catégorie: Delai d'intervention
 414,2024-11-06,80,négatif,problème de facturation
 415,2024-11-11,70,négatif,problème de facturation
-416,2024-11-12,80,négatif,problème de facturation
+416,2024-11-12,70,négatif,problème de facturation
 417,2024-11-12,70,négatif,service client injoignable
 418,2024-11-13,80,négatif,problème de facturation
-419,2024-11-13,40,inconnu,information complémentaire
+419,2024-11-13,40,neutre,information complémentaire
 420,2024-11-13,70,négatif,problème avec l'application
-421,2024-11-13,85,négatif,délai d'intervention
-422,2024-11-14,80,négatif,panne et urgences
-423,2024-11-15,40,négatif,autre
+421,2024-11-13,70,négatif,Catégorie: Delai d'intervention
+422,2024-11-14,70,négatif,panne et urgences
+423,2024-11-15,40,négatif,service client injoignable
 424,2024-11-17,80,négatif,problème de facturation
 425,2024-11-18,70,neutre,information complémentaire
-426,2024-11-18,60,négatif,information complémentaire
+426,2024-11-18,60,négatif,problème de facturation
 427,2024-11-18,70,négatif,problème de facturation
 428,2024-11-19,70,négatif,problème de facturation
 429,2024-11-19,80,négatif,panne et urgences
 430,2024-11-20,70,négatif,problème de facturation
 431,2024-11-20,70,négatif,problème avec l'application
-432,2024-11-20,50,négatif,information complémentaire
+432,2024-11-20,30,neutre,information complémentaire
 433,2024-11-20,60,négatif,problème avec l'application
 434,2024-11-20,70,négatif,service client injoignable
-435,2024-11-20,70,négatif,problème de facturation
-436,2024-11-21,40,neutre,information complémentaire
-437,2024-11-21,85,négatif,problème de facturation
+435,2024-11-20,60,négatif,problème de facturation
+436,2024-11-21,30,neutre,information complémentaire
+437,2024-11-21,80,négatif,problème de facturation
 438,2024-11-21,70,négatif,problème de facturation
-439,2024-11-22,90,négatif,"problème de facturation, service client injoignable"
-440,2024-11-22,80,négatif,problème de facturation
-441,2024-11-23,85,négatif,problème de facturation
-442,2024-11-24,80,négatif,problème de facturation
-443,2024-11-25,85,négatif,3. Catégorie : Delai d'intervention
-444,2024-11-26,80,négatif,autre
+439,2024-11-22,85,négatif,problème de facturation
+440,2024-11-22,70,négatif,service client injoignable
+441,2024-11-23,80,négatif,problème de facturation
+442,2024-11-24,70,négatif,problème de facturation
+443,2024-11-25,70,négatif,Catégorie: Delai d'intervention
+444,2024-11-26,90,négatif,Catégorie: autre
 445,2024-11-26,70,négatif,problème de facturation
 446,2024-11-26,70,négatif,problème de facturation
-447,2024-11-27,90,négatif,3. Catégorie : Delai d'intervention
+447,2024-11-27,80,négatif,Catégorie: Delai d'intervention
 448,2024-11-28,70,négatif,panne et urgences
-449,2024-11-28,80,négatif,problème de facturation
-450,2024-12-02,20,positif,autre
-451,2024-12-02,,inconnu,autre
-452,2024-12-02,60,négatif,autre
-453,2024-12-02,80,négatif,problème de facturation
-454,2024-12-03,80,négatif,problème de facturation
-455,2024-12-03,80,négatif,autre
-456,2024-12-03,85,négatif,service client injoignable
-457,2024-12-04,70,négatif,problème avec l'application
-458,2024-12-05,60,négatif,autre
-459,2024-12-05,30,négatif,autre
-460,2024-12-06,60,négatif,problème de facturation
-461,2024-12-06,85,négatif,délai d'intervention
-462,2024-12-06,85,négatif,problème de facturation
-463,2024-12-08,60,négatif,autre
-464,2024-12-09,90,négatif,3. Catégorie : Delai d'intervention
-465,2024-12-09,70,négatif,autre
+449,2024-11-28,70,négatif,problème de facturation
+450,2024-12-02,10,positif,Catégorie: remerciement
+451,2024-12-02,80,négatif,problème de facturation
+452,2024-12-02,70,négatif,Catégorie: Delai d'intervention
+453,2024-12-02,70,négatif,problème de facturation
+454,2024-12-03,70,négatif,problème de facturation
+455,2024-12-03,70,négatif,problème de facturation
+456,2024-12-03,80,négatif,service client injoignable
+457,2024-12-04,60,négatif,Catégorie: Probleme avec l'application
+458,2024-12-05,60,négatif,Catégorie: autre
+459,2024-12-05,30,négatif,Catégorie: autre
+460,2024-12-06,70,négatif,problème de facturation
+461,2024-12-06,80,négatif,Catégorie: Delai d'intervention
+462,2024-12-06,75,négatif,problème de facturation
+463,2024-12-08,70,négatif,Catégorie: autre
+464,2024-12-09,80,négatif,Catégorie: Delai d'intervention
+465,2024-12-09,70,négatif,Catégorie: autre
 466,2024-12-09,80,négatif,problème de facturation
 467,2024-12-09,70,négatif,problème de facturation
-468,2024-12-09,85,négatif,panne et urgences
-469,2024-12-09,90,négatif,problème de facturation
-470,2024-12-09,80,négatif,panne et urgences
-471,2024-12-10,70,négatif,autre
-472,2024-12-10,70,négatif,problème avec l'application
-473,2024-12-11,85,négatif,panne et urgences
-474,2024-12-12,80,inconnu,autre
+468,2024-12-09,80,négatif,panne et urgences
+469,2024-12-09,90,négatif,panne et urgences
+470,2024-12-09,75,négatif,panne et urgences
+471,2024-12-10,30,négatif,Catégorie: autre
+472,2024-12-10,70,négatif,problème de facturation
+473,2024-12-11,80,négatif,panne et urgences
+474,2024-12-12,70,négatif,problème de facturation
 475,2024-12-13,80,négatif,problème de facturation
 476,2024-12-15,70,négatif,problème de facturation
-477,2024-12-16,0,positif,autre
+477,2024-12-16,0,positif,information complémentaire
 478,2024-12-16,80,négatif,problème de facturation
-479,2024-12-17,80,négatif,3. Catégorie : Delai d'intervention
-480,2024-12-17,90,négatif,panne et urgences
+479,2024-12-17,75,négatif,Catégorie: Delai d'intervention
+480,2024-12-17,80,négatif,panne et urgences
 481,2024-12-18,80,négatif,problème de facturation
 482,2024-12-20,70,négatif,problème de facturation
 483,2024-12-23,70,négatif,service client injoignable
 484,2024-12-24,70,négatif,problème de facturation
-485,2024-12-26,,inconnu,autre
-486,2024-12-26,80,négatif,service client injoignable
-487,2024-12-27,80,négatif,autre
-488,2024-12-28,70,négatif,"service client injoignable, problème de compétence"
+485,2024-12-26,40,négatif,problème avec l'application
+486,2024-12-26,80,négatif,problème de facturation
+487,2024-12-27,70,négatif,Catégorie: autre
+488,2024-12-28,70,négatif,panne et urgences
 489,2024-12-30,80,négatif,problème de facturation
-490,2024-12-30,70,négatif,autre
-491,2024-12-30,70,négatif,service client injoignable
-492,2024-12-30,70,négatif,problème de facturation
+490,2024-12-30,70,négatif,problème de facturation
+491,2024-12-30,60,négatif,service client injoignable
+492,2024-12-30,60,négatif,problème de facturation
 493,2024-12-30,80,négatif,problème de facturation
 494,2025-01-01,80,négatif,service client injoignable
-495,2025-01-02,80,négatif,problème de facturation
+495,2025-01-02,70,négatif,problème de facturation
 496,2025-01-02,90,négatif,panne et urgences
-497,2025-01-06,80,négatif,3. Catégorie : Delai d'intervention
-498,2025-01-06,80,négatif,problème de facturation
-499,2025-01-06,80,négatif,3. Catégorie : Delai d'intervention
-500,2025-01-07,10,neutre,information complémentaire
+497,2025-01-06,70,négatif,Catégorie: Delai d'intervention
+498,2025-01-06,70,négatif,problème de facturation
+499,2025-01-06,70,négatif,Catégorie: Delai d'intervention
+500,2025-01-07,20,neutre,information complémentaire
 501,2025-01-07,80,négatif,problème de facturation
-502,2025-01-08,50,négatif,autre
-503,2025-01-09,80,négatif,délai d'intervention
-504,2025-01-10,80,négatif,problème de facturation
-505,2025-01-12,60,négatif,délai d'intervention
+502,2025-01-08,0,neutre,Catégorie: autre
+503,2025-01-09,70,négatif,Catégorie: Delai d'intervention
+504,2025-01-10,70,négatif,problème de facturation
+505,2025-01-12,70,négatif,Catégorie: Delai d'intervention
 506,2025-01-14,70,neutre,information complémentaire
-507,2025-01-15,80,négatif,problème de facturation
-508,2025-01-15,90,négatif,panne et urgences
-509,2025-01-18,70,négatif,problème de facturation
-510,2025-01-19,20,neutre,information complémentaire
-511,2025-01-20,85,négatif,problème de facturation
-512,2025-01-20,90,négatif,panne et urgences
-513,2025-01-21,85,négatif,délai d'intervention
-514,2025-01-21,80,négatif,panne et urgences
-515,2025-01-21,90,négatif,"service client injoignable, délai d'intervention"
+507,2025-01-15,70,négatif,problème de facturation
+508,2025-01-15,80,négatif,panne et urgences
+509,2025-01-18,70,négatif,service client injoignable
+510,2025-01-19,30,neutre,information complémentaire
+511,2025-01-20,80,négatif,problème de facturation
+512,2025-01-20,80,négatif,panne et urgences
+513,2025-01-21,70,négatif,délai d'intervention
+514,2025-01-21,70,négatif,panne et urgences
+515,2025-01-21,80,négatif,service client injoignable
 516,2025-01-21,90,négatif,problème de facturation
-517,2025-01-21,80,négatif,problème de facturation
-518,2025-01-21,70,négatif,délai d'intervention
-519,2025-01-22,20,neutre,autre
+517,2025-01-21,70,négatif,problème de facturation
+518,2025-01-21,70,négatif,Catégorie: Delai d'intervention
+519,2025-01-22,20,neutre,Catégorie: autre
 520,2025-01-22,80,négatif,problème de facturation
-521,2025-01-23,80,négatif,panne et urgences
-522,2025-01-23,80,négatif,problème de facturation
-523,2025-01-24,10,négatif,autre
-524,2025-01-24,60,inconnu,service client injoignable
-525,2025-01-24,70,inconnu,autre
-526,2025-01-25,90,négatif,problème d'âge
-527,2025-01-25,80,négatif,panne et urgences
-528,2025-01-28,90,négatif,problème de facturation
-529,2025-01-28,70,négatif,problème de facturation
-530,2025-01-29,20,négatif,autre
+521,2025-01-23,70,négatif,panne et urgences
+522,2025-01-23,70,négatif,problème de facturation
+523,2025-01-24,10,neutre,information complémentaire
+524,2025-01-24,60,négatif,service client injoignable
+525,2025-01-24,70,négatif,Catégorie: autre
+526,2025-01-25,80,négatif,problème d'âge
+527,2025-01-25,70,négatif,panne et urgences
+528,2025-01-28,80,négatif,problème de facturation
+529,2025-01-28,80,négatif,problème de facturation
+530,2025-01-29,20,négatif,Catégorie: autre
 531,2025-01-29,70,négatif,problème de facturation
-532,2025-01-30,80,négatif,service client injoignable
-533,2025-01-30,80,inconnu,problème de facturation
-534,2025-01-31,90,négatif,"problème de facturation, service client injoignable"
-535,2025-02-03,90,négatif,problème de facturation
-536,2025-02-04,60,négatif,autre
-537,2025-02-04,80,inconnu,problème de facturation
-538,2025-02-10,50,inconnu,autre
-539,2025-02-10,80,négatif,problème de facturation
+532,2025-01-30,70,négatif,service client injoignable
+533,2025-01-30,70,négatif,problème de facturation
+534,2025-01-31,80,négatif,service client injoignable
+535,2025-02-03,80,négatif,problème de facturation
+536,2025-02-04,70,négatif,information complémentaire
+537,2025-02-04,80,négatif,problème de facturation
+538,2025-02-10,30,positif,Catégorie: remerciement
+539,2025-02-10,70,négatif,problème de facturation
 540,2025-02-10,70,négatif,service client injoignable
-541,2025-02-12,80,négatif,problème de facturation
+541,2025-02-12,70,négatif,problème de facturation
 542,2025-02-12,70,négatif,problème de facturation
 543,2025-02-12,80,négatif,panne et urgences
-544,2025-02-13,80,négatif,problème de facturation
-545,2025-02-13,60,neutre,problème avec l'application
+544,2025-02-13,70,négatif,problème de facturation
+545,2025-02-13,30,neutre,problème avec l'application
 546,2025-02-17,60,négatif,problème avec l'application
 547,2025-02-18,80,négatif,problème de facturation
-548,2025-02-19,85,négatif,problème de facturation
-549,2025-02-19,80,négatif,problème de facturation
-550,2025-02-19,90,inconnu,délai d'intervention
-551,2025-02-19,,inconnu,information complémentaire (puisque le tweet introduit une histoire sans donner de détails spécifiques).
-552,2025-02-19,70,inconnu,problème de facturation
-553,2025-02-21,70,négatif,problème avec l'application
-554,2025-02-21,80,négatif,service client injoignable
-555,2025-02-23,85,négatif,problème de facturation
-556,2025-02-23,,inconnu,autre
-557,2025-02-24,50,négatif,autre
-558,2025-02-24,0,neutre,information complémentaire
+548,2025-02-19,80,négatif,problème de facturation
+549,2025-02-19,70,négatif,problème de facturation
+550,2025-02-19,80,négatif,délai d'intervention
+551,2025-02-19,50,neutre,Catégorie: autre
+552,2025-02-19,60,négatif,problème de facturation
+553,2025-02-21,70,négatif,Catégorie: Probleme avec l'application
+554,2025-02-21,70,négatif,service client injoignable
+555,2025-02-23,80,négatif,information complémentaire
+556,2025-02-23,80,négatif,problème de facturation
+557,2025-02-24,60,négatif,Catégorie: autre
+558,2025-02-24,10,neutre,information complémentaire
 559,2025-02-24,80,négatif,service client injoignable
 560,2025-02-24,80,négatif,service client injoignable
-561,2025-02-24,75,négatif,service client injoignable
+561,2025-02-24,80,négatif,service client injoignable
 562,2025-02-24,70,négatif,service client injoignable
 563,2025-02-24,80,négatif,service client injoignable
-564,2025-02-24,80,négatif,problème de facturation
+564,2025-02-24,70,négatif,problème de facturation
 565,2025-02-24,70,négatif,service client injoignable
 566,2025-02-25,80,négatif,problème de facturation
-567,2025-02-25,70,négatif,service client injoignable
-568,2025-02-25,90,négatif,"delai d'intervention, service client injoignable"
-569,2025-02-26,80,négatif,problème de facturation
+567,2025-02-25,70,négatif,problème de facturation
+568,2025-02-25,80,négatif,Catégorie: Delai d'intervention
+569,2025-02-26,70,négatif,problème de facturation
 570,2025-02-26,80,négatif,problème de facturation
 571,2025-02-26,60,négatif,problème de facturation
-572,2025-03-03,80,négatif,délai d'intervention
-573,2025-03-03,,neutre**,autre**
+572,2025-03-03,70,négatif,Catégorie: Delai d'intervention
+573,2025-03-03,20,neutre,Catégorie: autre
 574,2025-03-03,70,négatif,problème de facturation
-575,2025-03-03,80,inconnu,problème de facturation
-576,2025-03-03,85,négatif,problème de facturation
+575,2025-03-03,70,négatif,problème de facturation
+576,2025-03-03,80,négatif,problème de facturation
 577,2025-03-04,70,négatif,service client injoignable
