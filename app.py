@@ -7,8 +7,9 @@ from datetime import datetime, timedelta
 import re
 from textblob import TextBlob
 import locale
+import os
 
-# Configuration de la page
+# Configuration de la page - DOIT ÊTRE PREMIER APPEL À STREAMLIT
 st.set_page_config(
     page_title="Dashboard Service client de Engie",
     page_icon="📊",
@@ -16,27 +17,74 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Importer les fonctions communes depuis utils.py
+from utils import analyze_sentiment, categorize_problem, clean_tweet_text
+
+# Tenter d'importer les fonctionnalités avancées
+try:
+    from agent_ia import analyze_tweet_advanced
+    AGENT_IA_AVAILABLE = True
+except ImportError:
+    AGENT_IA_AVAILABLE = False
+
+# Ajouter l'option d'utiliser l'agent IA avancé dans la barre latérale
+st.sidebar.title("Options avancées")
+use_advanced_ai = st.sidebar.checkbox("Utiliser l'analyse IA avancée", value=AGENT_IA_AVAILABLE)
+
 # Titre de l'application
 st.title("Dashboard Service client de Engie")
 st.markdown("---")
+
+# Définir les chemins des fichiers de données
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CLEANED_TWEETS_PATH = os.path.join(BASE_DIR, 'cleaned_tweets.csv')
+MODEL_RESPONSES_PATH = os.path.join(BASE_DIR, 'model_responses.csv')
 
 # Fonction pour charger les données tweets
 @st.cache_data
 def load_tweets_data():
     try:
-        df = pd.read_csv('cleaned_tweets.csv')
-        # Convertir date en datetime si ce n'est pas déjà fait
-        df['date'] = pd.to_datetime(df['date'])
-        return df
+        # Vérifier si le fichier existe et afficher son chemin
+        if os.path.exists(CLEANED_TWEETS_PATH):
+            df = pd.read_csv(CLEANED_TWEETS_PATH, parse_dates=False)
+            st.success(f"Fichier trouvé et chargé: {len(df)} tweets")
+            
+            # Convertir la colonne date en datetime
+            if 'date' in df.columns:
+                df['date'] = pd.to_datetime(df['date'], errors='coerce')
+            
+            # Assurer que chaque tweet a un ID unique
+            if 'id' in df.columns and df['id'].duplicated().any():
+                df['original_id'] = df['id'].copy()
+                df['id'] = df.index.astype(str) + '_' + df['id'].astype(str)
+                
+            return df
+        else:
+            st.error(f"Fichier {CLEANED_TWEETS_PATH} introuvable")
+            return pd.DataFrame()
+            
     except Exception as e:
         st.error(f"Erreur lors du chargement des tweets: {e}")
-        # Retourner un DataFrame vide en cas d'erreur
         return pd.DataFrame()
 
 # Fonction simplifiée pour l'analyse des sentiments
 def analyze_sentiment(text):
+    # Si l'analyse avancée est activée et disponible
+    if use_advanced_ai and AGENT_IA_AVAILABLE:
+        try:
+            return analyze_tweet_advanced(text)
+        except Exception as e:
+            st.warning(f"Erreur avec l'analyse avancée: {e}. Utilisation de l'analyse simplifiée.")
+    
     # Version simplifiée qui classifie simplement en fonction de mots clés
     text = str(text).lower()
+    
+    # Nettoyer le texte si la fonction est disponible
+    try:
+        text = clean_tweet_text(text)
+    except:
+        pass  # Continuer sans nettoyage si la fonction n'est pas disponible
+    
     negative_words = ['problème', 'erreur', 'bug', 'panne', 'mauvais', 'horrible', 'nul', 'impossible']
     positive_words = ['merci', 'super', 'excellent', 'parfait', 'bon', 'bien']
     
@@ -49,6 +97,39 @@ def analyze_sentiment(text):
             score += 0.2
     
     return max(min(score, 1.0), -1.0)  # Limiter entre -1 et 1
+
+# Fonction pour catégoriser les problèmes dans les tweets négatifs
+def categorize_problem(text):
+    text = str(text).lower()
+    
+    # Catégories de problèmes et mots-clés associés
+    categories = {
+        'Facturation': ['facture', 'prélèvement', 'paiement', 'tarif', 'prix', 'augmentation', 'euros', 'cher'],
+        'Application/Site': ['application', 'site', 'connexion', 'compte', 'mot de passe', 'bug', 'web', 'appli'],
+        'Chauffage/Eau': ['chauffage', 'chaudière', 'eau chaude', 'radiateur', 'température', 'froid', 'gaz'],
+        'Service Client': ['service client', 'joindre', 'appel', 'attente', 'réponse', 'mail', 'contact'],
+        'Installation': ['installation', 'technicien', 'intervention', 'compteur', 'rendez-vous', 'visite']
+    }
+    
+    # Vérifier chaque catégorie
+    scores = {category: 0 for category in categories}
+    
+    for category, keywords in categories.items():
+        for keyword in keywords:
+            if keyword in text:
+                scores[category] += 1
+    
+    # Trouver la catégorie avec le plus de mots-clés
+    max_score = max(scores.values()) if scores else 0
+    
+    if max_score > 0:
+        # Retourner la catégorie avec le plus haut score
+        for category, score in scores.items():
+            if score == max_score:
+                return category
+    
+    # Catégorie par défaut si aucun mot-clé correspondant
+    return 'Autre'
 
 # Sidebar pour les filtres
 st.sidebar.header("Filtres")
@@ -130,6 +211,7 @@ if not tweets_df.empty:
     # Visualisations des tweets
     st.header("Visualisations des tweets")
     
+    # Réduire à deux onglets maintenant que le troisième est une page séparée
     tab1, tab2 = st.tabs(["Analyse temporelle", "Analyse des sentiments"])
     
     with tab1:
@@ -151,7 +233,7 @@ if not tweets_df.empty:
         # Regrouper par mois
         tweets_by_month = tweets_filtered.groupby('year_month').size().reset_index(name='count')
         
-        # Ajouter la colonne de tri - CORRECTION ICI
+        # Ajouter la colonne de tri
         month_mapping = tweets_filtered[['year_month', 'sort_date']].drop_duplicates()
         tweets_by_month = tweets_by_month.merge(month_mapping, on='year_month', how='left')
         
@@ -164,7 +246,7 @@ if not tweets_df.empty:
         # Grouper par sentiment et mois
         sentiment_by_month = tweets_filtered.groupby(['year_month', 'sentiment_category']).size().reset_index(name='count')
         
-        # Ajouter la colonne de tri - CORRECTION ICI AUSSI
+        # Ajouter la colonne de tri
         sentiment_by_month = sentiment_by_month.merge(month_mapping, on='year_month', how='left')
         
         # Trier les données par sentiment
@@ -202,14 +284,14 @@ if not tweets_df.empty:
             )
             
         else:  # Visualisation détaillée
-            # Graphique à barres empilées par sentiment (au lieu de groupées)
+            # Graphique à barres empilées par sentiment
             fig = px.bar(
                 sentiment_by_month, 
                 x='year_month', 
                 y='count',
                 color='sentiment_category',
                 title="Évolution mensuelle des tweets par sentiment",
-                barmode='stack',  # 'stack' au lieu de 'group' pour empiler
+                barmode='stack',
                 color_discrete_map={
                     'Négatif': 'rgba(231, 76, 60, 0.7)',
                     'Neutre': 'rgba(241, 196, 15, 0.7)',
@@ -221,7 +303,7 @@ if not tweets_df.empty:
             # Personnalisation du graphique
             fig.update_traces(
                 marker_line_width=1,
-                marker_line_color="white",  # Ajouter une bordure blanche pour mieux distinguer les segments
+                marker_line_color="white",
                 opacity=0.9,
                 hovertemplate='<b>%{x}</b><br>Sentiment: %{fullData.name}<br>Nombre de tweets: %{y}<extra></extra>'
             )
@@ -334,11 +416,29 @@ if not tweets_df.empty:
     if sentiment_filter:
         display_tweets = tweets_filtered[tweets_filtered['sentiment_category'].isin(sentiment_filter)]
         
-        # Afficher un tableau interactif avec les IDs ajoutés
+        # Créer une copie du dataframe pour la modification
+        display_df = display_tweets.copy()
+        
+        # Formater les dates (sans l'heure)
+        display_df['date'] = display_tweets['date'].dt.strftime('%d/%m/%Y')
+        
+        # Ajouter une colonne d'index unique pour distinguer les lignes avec le même ID Twitter
+        display_df = display_df.reset_index().rename(columns={'index': 'row_id'})
+        
+        # Identifier les IDs en double
+        duplicate_ids = display_df['id'].duplicated(keep=False)
+        display_df['id_status'] = 'unique'
+        display_df.loc[duplicate_ids, 'id_status'] = 'doublon'
+        
+        # Ajouter cette ligne pour formater les ID de manière plus lisible
+        display_df['id_formatted'] = display_df.apply(
+            lambda row: f"#{row['row_id']} (ID: {str(row['original_id']) if 'original_id' in display_df.columns else row['id']})",
+            axis=1
+        )
+        
+        # Puis utiliser cette colonne dans l'affichage
         st.dataframe(
-            display_tweets[['id', 'date', 'screen_name', 'full_text', 'sentiment_category']].assign(
-                date=display_tweets['date'].dt.strftime('%d/%m/%Y %H:%M')
-            ),
+            display_df[['id_formatted', 'date', 'screen_name', 'full_text', 'sentiment_category']],
             use_container_width=True
         )
         
@@ -351,38 +451,11 @@ if not tweets_df.empty:
         )
     else:
         st.write("Aucun sentiment sélectionné.")
+
 else:
     st.error("Impossible de charger les données des tweets. Veuillez vérifier le fichier CSV.")
 
-# Footer
+# Footer avec lien vers la page des plaintes
 st.markdown("---")
 st.markdown("Dashboard créé avec Streamlit")
-
-# Ajouter cette fonction après la fonction analyze_sentiment
-def categorize_problem(text):
-    """Catégorise le type de problème mentionné dans un tweet négatif"""
-    text = str(text).lower()
-    
-    # Définir les mots-clés pour chaque catégorie de problème
-    categories = {
-        'Facturation': ['facture', 'mensualité', 'prélèvement', 'payer', 'payé', 'tarif', 'prix', 'coût', 'cher', 'euro', '€'],
-        'Application/Site': ['appli', 'application', 'site', 'bug', 'connexion', 'connecter', 'monpilotageelec', 'espace client'],
-        'Chauffage/Eau': ['chauffage', 'eau chaude', 'chaudière', 'température', 'froid', 'chaleur', 'douche', 'radiateur'],
-        'Service Client': ['service client', 'joindre', 'appeler', 'rappeler', 'téléphone', 'contact', 'réponse', 'mail', 'message'],
-        'Installation': ['technicien', 'intervention', 'installateur', 'installer', 'dépanner', 'réparation', 'panne', 'compteur']
-    }
-    
-    # Déterminer la catégorie en fonction des mots-clés présents
-    scores = {cat: 0 for cat in categories}
-    
-    for category, keywords in categories.items():
-        for keyword in keywords:
-            if keyword in text:
-                scores[category] += 1
-    
-    # Si aucune catégorie n'est trouvée
-    if max(scores.values(), default=0) == 0:
-        return "Autre"
-    
-    # Retourner la catégorie avec le score le plus élevé
-    return max(scores.items(), key=lambda x: x[1])[0] 
+st.markdown("Pour une analyse détaillée des plaintes, consultez l'onglet 'Analyse des plaintes' dans le menu de gauche.") 
